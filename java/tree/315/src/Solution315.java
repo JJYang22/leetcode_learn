@@ -1,17 +1,18 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Solution315 {
     public  static void main(String args [])
     {
-        ArrayList <Integer> nums= new ArrayList<>(4);
-        nums.add(5);
-        nums.add(2);
-        nums.add(6);
-        nums.add(1);
-        Solution s=new Solution(0,nums);
-        List<Integer> ans=s.mergesort(nums);
-        System.out.println(s.nixushudui);
+//        ArrayList <Integer> nums= new ArrayList<>(4);
+//        nums.add(5);
+//        nums.add(2);
+//        nums.add(6);
+//        nums.add(1);
+        int nums [] ={-1,-1} ;
+        Solution s=new Solution();
+       List <Integer> ans=s.countSmaller(nums);
         for(Integer a : ans)
         {
             System.out.print(a+" ");
@@ -19,76 +20,68 @@ public class Solution315 {
     }
 }
 class Solution {
-    int nixushudui;
-    ArrayList <Integer> nums;
-    ArrayList <Integer> counts ;
-    ArrayList <Integer> indexs ;
 
-   public Solution(int nixu,ArrayList<Integer> nums) {
-        nixushudui = nixu;
-        indexs = new ArrayList<>(nums.size());
-        counts = new ArrayList<>(nums.size());
-        this.nums =new ArrayList<>(nums.size());
-        for (int i = 0; i < nums.size(); i++)
-        {
-            indexs.add(i,i);
-            this.nums.add(i,nums.get(i));
-            counts.add(i,0);
-        }
-    }
+   int [] counts ;
+   int [] indexs ;
     public List<Integer> countSmaller(int[] nums) {
-        indexs = new ArrayList<>(nums.length);
-        counts = new ArrayList<>(nums.length);
-        this.nums =new ArrayList<>(nums.length);
+        if(nums  == null )
+            return null;
+        indexs = new int [nums.length];
+        counts = new int [nums.length];
         for (int i = 0; i < nums.length; i++)
         {
-            indexs.add(i,i);
-            this.nums.add(i,nums[i]);
-            counts.add(i,0);
+            indexs[i]=i;
+            counts[i]=0;
         }
-        mergesort(indexs);
-        return counts;
-    }
-    public List<Integer> mergesort(ArrayList<Integer> nums)
-    {
-        return merge(nums,0,nums.size()-1);
-    }
-    public List <Integer> merge(ArrayList<Integer> nums , int begin ,int end)
-    {
-        if(begin>end)
-            return null;
-        if(begin == end)
+        mergesort(nums);
+        List<Integer>ans =new LinkedList<Integer>();
+        for (int i:counts)
         {
-            List<Integer> ans=new ArrayList<Integer>(1);
-            ans.add(nums.get(begin));
-            return ans;
-        }
-        int mid=(begin+end)/2;
-        List<Integer> left=merge (nums,begin,mid);
-        List<Integer> right=merge (nums,mid+1,end);
-        List<Integer> ans=new ArrayList<Integer>(end -begin +1);
-        int ans_t=0;
-        int left_t=0;
-        int right_t=0;
-        while(ans_t++<end-begin+1)
-        {
-            if(left_t>mid-begin) {
-                ans.add(right.get(right_t++));
-                continue;
-            }
-            if(right_t>end-mid-1) {
-                ans.add(left.get(left_t++));
-                continue;
-            }
-            if(left.get(left_t) < right.get(right_t)) {
-                ans.add(left.get(left_t++));
-            }
-                else
-            {
-                nixushudui=nixushudui+end-mid-right_t;
-                ans.add(right.get(right_t++));
-            }
+            ans.add(i);
         }
         return ans;
+    }
+    public void mergesort(int nums[])
+    {
+         merge(0,indexs.length-1,nums);
+    }
+    public void merge( int begin ,int end,int nums[])
+    {
+        if(begin>=end)
+            return ;
+        int mid=(begin+end)/2;
+        merge (begin,mid,nums);
+        merge (mid+1,end,nums);
+        if(nums[indexs[mid]] > nums[indexs[mid+1]]) {
+           int[] ans = new int[end - begin + 1];
+           int ans_t = 0;
+           int left_t = 0;
+           int right_t = 0;
+           while (ans_t < end - begin + 1) {
+               if (left_t > mid - begin) {
+                   ans[ans_t] = indexs[mid + 1 + right_t++];
+                   ans_t++;
+                   continue;
+               }
+               if (right_t > end - mid - 1) {
+                   ans[ans_t] = indexs[begin + left_t++];
+                   ans_t++;
+                   continue;
+               }
+               if (nums[indexs[begin + left_t]] <= nums[indexs[mid + 1 + right_t]]) {
+                   ans[ans_t] = indexs[begin + left_t++];
+               } else {
+                   for (int i = left_t; i <= mid - begin; i++) {
+                       this.counts[indexs[begin + i]] = counts[indexs[begin + i]] + 1;
+                   }
+                   ans[ans_t] = indexs[mid + 1 + right_t++];
+               }
+               ans_t++;
+           }
+           for (int i = 0; i <= end - begin; i++) {
+               indexs[begin + i] = ans[i];
+           }
+       }
+        return ;
     }
 }
