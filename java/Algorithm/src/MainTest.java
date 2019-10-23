@@ -1,4 +1,5 @@
 import Array.RemoveDuplicates;
+import Array.RotateArray;
 
 /**
  * @Author Voidmian
@@ -6,6 +7,7 @@ import Array.RemoveDuplicates;
  */
 public class MainTest {
     public static void main(String[] args) {
-        RemoveDuplicates.test();
+//        RemoveDuplicates.test();
+        RotateArray.test();
     }
 }
