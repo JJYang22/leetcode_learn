@@ -1,5 +1,4 @@
-import Array.RemoveDuplicates;
-import Array.RotateArray;
+import Array.*;
 
 /**
  * @Author Voidmian
@@ -7,7 +6,9 @@ import Array.RotateArray;
  */
 public class MainTest {
     public static void main(String[] args) {
-//        RemoveDuplicates.test();
-        RotateArray.test();
+//        SingleNumberInArray.test();
+        IntersectInArray.test();
+
     }
+
 }
