@@ -1,5 +1,4 @@
-import MyStack.IsValid;
-import MyStack.MinStack;
+import MyStack.*;
 
 /**
  * @Author Voidmian
@@ -7,7 +6,7 @@ import MyStack.MinStack;
  */
 public class Main {
     public static void main(String[] args) {
-        IsValid.test();
+        CloneGraph.test();
     }
 
 }

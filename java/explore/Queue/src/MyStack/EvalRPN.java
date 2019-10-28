@@ -9,14 +9,48 @@ import java.util.Stack;
 public class EvalRPN {
     static public void test(){
         EvalRPN evalRPN=new EvalRPN();
-        String [] tokens={"2","1","+","3","*"};
+        String [] tokens={"4","3","-"};
         System.out.println(evalRPN.evalRPN(tokens));
     }
 
     public int evalRPN(String[] tokens) {
         Stack <String> RPN =new Stack<>();
         for (int i = 0; i <tokens.length ; i++) {
-            if
+                char operator = tokens[i].charAt(0);
+                switch (operator) {
+                    case '+': {
+                        int b = Integer.parseInt(RPN.pop());
+                        int a = Integer.parseInt(RPN.pop());
+                        RPN.push(String.valueOf(a + b));
+                        break;
+                    }
+                    case '-': {
+                        if(tokens[i].length()>1){
+                            RPN.push(tokens[i]);
+                            break;
+                        }
+                        int b = Integer.parseInt(RPN.pop());
+                        int a = Integer.parseInt(RPN.pop());
+                        RPN.push(String.valueOf(a - b));
+                        break;
+                    }
+                    case '*': {
+                        int b = Integer.parseInt(RPN.pop());
+                        int a = Integer.parseInt(RPN.pop());
+                        RPN.push(String.valueOf(a * b));
+                        break;
+                    }
+                    case '/': {
+                        int b = Integer.parseInt(RPN.pop());
+                        int a = Integer.parseInt(RPN.pop());
+                        RPN.push(String.valueOf(a / b));
+                        break;
+                    }
+                    default:{
+                        RPN.push(tokens[i]);
+                    }
+            }
         }
+        return Integer.parseInt(RPN.pop());
     }
 }
