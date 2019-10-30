@@ -1,10 +1,7 @@
-package MyQueue;
+package DataStructure.MyQueue;
 
-import javax.print.attribute.IntegerSyntax;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Set;
 
 /**
  * @Author Voidmian

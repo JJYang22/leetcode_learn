@@ -1,4 +1,4 @@
-package MyStack;
+package DataStructure.MyStack;
 
 import Obj.Node;
 
@@ -17,11 +17,9 @@ public class CloneGraph {
         Node node4 = new Node();
 
 
-
         List<Node> list1 = new ArrayList<>();
         list1.add(node2);
         list1.add(node4);
-
 
 
         List<Node> list2 = new ArrayList<>();
@@ -30,7 +28,7 @@ public class CloneGraph {
 
         List<Node> list3 = new ArrayList<>();
         list3.add(node4);
-
+        list3.add(node2);
 
         List<Node> list4 = new ArrayList<>();
         list4.add(node1);
@@ -53,26 +51,21 @@ public class CloneGraph {
     }
 
     public Node cloneGraph(Node node) {
-        Map<Integer,Node> map = new HashMap();
+        Map<Integer, Node> map = new HashMap();
         Node ans = fun(node, map);
         return ans;
     }
 
-    public Node fun(Node node, Map<Integer,Node> map) {
+    public Node fun(Node node, Map<Integer, Node> map) {
         if (map.containsKey(node.val)) {
-           return map.get(node.val);
+            return map.get(node.val);
         }
-
-        Node ans = new Node();
         List<Node> neighbors = new ArrayList<>();
-        ans.setNeighbors(neighbors);
-        ans.setVal(node.val);
-        map.put(ans.val,ans);
-
+        Node ans = new Node(node.val, neighbors);
+        map.put(ans.val, ans);
         for (int i = 0; i < node.neighbors.size(); i++) {
-                ans.neighbors.add(fun(node.neighbors.get(i), map));
+            ans.neighbors.add(fun(node.neighbors.get(i), map));
         }
-
         return ans;
     }
 }

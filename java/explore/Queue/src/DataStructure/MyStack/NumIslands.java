@@ -1,8 +1,4 @@
-package MyStack;
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+package DataStructure.MyStack;
 
 /**
  * @Author Voidmian

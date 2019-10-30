@@ -1,6 +1,5 @@
-package MyStack;
+package DataStructure.MyStack;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

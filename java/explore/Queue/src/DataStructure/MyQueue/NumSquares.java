@@ -1,4 +1,4 @@
-package MyQueue;
+package DataStructure.MyQueue;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

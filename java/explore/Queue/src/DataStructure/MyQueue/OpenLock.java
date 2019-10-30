@@ -1,4 +1,4 @@
-package MyQueue;
+package DataStructure.MyQueue;
 
 import java.util.HashSet;
 import java.util.LinkedList;

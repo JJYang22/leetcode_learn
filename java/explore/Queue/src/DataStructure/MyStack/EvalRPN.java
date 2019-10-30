@@ -1,4 +1,4 @@
-package MyStack;
+package DataStructure.MyStack;
 
 import java.util.Stack;
 
