@@ -1,4 +1,7 @@
-import DataStructure.MyStack.*;
+import DataStructure.CanVisitAllRooms841;
+import DataStructure.FloodFill;
+import DataStructure.MyArray.*;
+import DataStructure.UpdateMatrix;
 
 /**
  * @Author Voidmian
@@ -6,7 +9,8 @@ import DataStructure.MyStack.*;
  */
 public class Main {
     public static void main(String[] args) {
-        FindTargetSumWays.test();
+
+        PascalTriangle118.test();
     }
 
 }
