@@ -13,13 +13,6 @@ public class Node {
 
         public Node() {}
 
-    public void setVal(int val) {
-        this.val = val;
-    }
-
-    public void setNeighbors(List<Node> neighbors) {
-        this.neighbors = neighbors;
-    }
 
     public Node(int _val, List<Node> _neighbors) {
             val = _val;

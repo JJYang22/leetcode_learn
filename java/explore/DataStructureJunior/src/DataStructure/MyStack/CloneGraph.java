@@ -34,16 +34,16 @@ public class CloneGraph {
         list4.add(node1);
         list4.add(node3);
 
-        node1.setVal(1);
-        node2.setVal(2);
-        node4.setVal(4);
-        node3.setVal(3);
-
-
-        node1.setNeighbors(list1);
-        node2.setNeighbors(list2);
-        node3.setNeighbors(list3);
-        node4.setNeighbors(list4);
+//        node1.setVal(1);
+//        node2.setVal(2);
+//        node4.setVal(4);
+//        node3.setVal(3);
+//
+//
+//        node1.setNeighbors(list1);
+//        node2.setNeighbors(list2);
+//        node3.setNeighbors(list3);
+//        node4.setNeighbors(list4);
 
         CloneGraph cloneGraph = new CloneGraph();
         Node ans = cloneGraph.cloneGraph(node1);

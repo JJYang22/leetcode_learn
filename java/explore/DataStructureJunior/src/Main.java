@@ -1,6 +1,8 @@
 import DataStructure.CanVisitAllRooms841;
 import DataStructure.FloodFill;
 import DataStructure.MyArray.*;
+import DataStructure.MyLinkList.*;
+import DataStructure.MyStack.MyStack;
 import DataStructure.MyString.ReverseWords151;
 import DataStructure.UpdateMatrix;
 
@@ -10,7 +12,7 @@ import DataStructure.UpdateMatrix;
  */
 public class Main {
     public static void main(String[] args) {
-        MoveZeroes283.test();
+        CopyRandomList138.test();
     }
 
 }
