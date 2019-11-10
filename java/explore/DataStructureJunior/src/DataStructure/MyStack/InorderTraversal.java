@@ -1,6 +1,6 @@
 package DataStructure.MyStack;
 
-import Obj.TreeNode;
+import DataStructure.Obj.TreeNode;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Obj;
+package DataStructure.Obj;
 
 import java.util.List;
 

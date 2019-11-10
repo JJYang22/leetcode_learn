@@ -1,6 +1,6 @@
 package DataStructure.MyLinkList;
 
-import Obj.ListNode;
+import DataStructure.Obj.ListNode;
 
 /**
  * @Author Voidmian

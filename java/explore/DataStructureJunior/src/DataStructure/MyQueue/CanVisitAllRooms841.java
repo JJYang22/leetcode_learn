@@ -1,7 +1,6 @@
-package DataStructure;
+package DataStructure.MyQueue;
 
 
-import java.net.ProxySelector;
 import java.util.*;
 
 /**

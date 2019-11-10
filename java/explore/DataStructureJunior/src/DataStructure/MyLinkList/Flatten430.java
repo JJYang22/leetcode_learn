@@ -1,6 +1,6 @@
 package DataStructure.MyLinkList;
 
-import Obj.Node430.Node;
+import DataStructure.Obj.Node430.Node;
 
 import java.util.Stack;
 

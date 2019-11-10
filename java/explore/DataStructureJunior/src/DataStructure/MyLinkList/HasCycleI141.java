@@ -1,9 +1,6 @@
 package DataStructure.MyLinkList;
 
-import Obj.ListNode;
-
-import java.util.HashSet;
-import java.util.List;
+import DataStructure.Obj.ListNode;
 
 /**
  * @Author Voidmian

@@ -1,8 +1,6 @@
 package DataStructure.MyLinkList;
 
-import Obj.Node138.Node;
-
-import java.util.*;
+import DataStructure.Obj.Node138.Node;
 
 /**
  * @Author Voidmian

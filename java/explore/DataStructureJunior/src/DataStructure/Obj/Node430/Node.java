@@ -1,4 +1,4 @@
-package Obj.Node430;
+package DataStructure.Obj.Node430;
 
 /**
  * @Author Voidmian

@@ -1,6 +1,6 @@
 package DataStructure.MyStack;
 
-import Obj.Node;
+import DataStructure.Obj.Node;
 
 import java.util.*;
 
