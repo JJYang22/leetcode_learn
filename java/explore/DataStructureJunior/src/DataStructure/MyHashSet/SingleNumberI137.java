@@ -5,18 +5,18 @@ package DataStructure.MyHashSet;
  * @Date 2019/11/6 20:28
  */
 public class SingleNumberI137 {
-//    public int singleNumber(int[] nums) {
-//
-//        int one=0;
-//        int two=0;
-//
-//        for (int i = 0; i < nums.length ; i++) {
-//            one = one ^ (~two) & (nums[i]);
-//            two = two ^ (~one) & (nums[i]);
-//        }
-//
-//        return one;
-//    }
+    public int singleNumber(int[] nums) {
+
+        int one=0;
+        int two=0;
+
+        for (int i = 0; i < nums.length ; i++) {
+            one = one ^ (~two) & (nums[i]);
+            two = two ^ (~one) & (nums[i]);
+        }
+
+        return one;
+    }
 //    public int singleNumber(int[] nums) {
 //
 //        int one1=0;
