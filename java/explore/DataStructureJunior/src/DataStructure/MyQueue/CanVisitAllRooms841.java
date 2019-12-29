@@ -27,6 +27,7 @@ public class CanVisitAllRooms841 {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
         Set<Integer> used = new HashSet<>();
         Queue<Integer> key = new LinkedList<>();
+
         key.offer(0);
         while (!key.isEmpty()) {
             int curKey = key.poll();
